@@ -9,7 +9,10 @@ public class Plant : ScriptableObject {
     public Sprite sprite;
 
     [Tooltip("Valor de felicidade individual que a planta gera")]
-    public float plantHappinessValue;
+    public int plantHappinessValue;
+
+    [Tooltip("Valor de compra da planta")]
+    public int plantPrice;
 
     [Tooltip("Valor máximo de água da planta")]
     public float waterMax;

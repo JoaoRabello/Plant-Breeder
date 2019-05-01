@@ -5,14 +5,17 @@ using UnityEngine.UI;
 
 public class PlantBehaviour : MonoBehaviour
 {
+    public PlantManager plantManager;
     public Plant plant;
 
-    [HideInInspector] public float plantHappinessValue;
+    [HideInInspector] public int plantHappinessValue;
+
+    public bool owned = false;
 
     [HideInInspector] public float waterMax, water;
     [HideInInspector] public float lightMax, pLight;
     [HideInInspector] public float healthMax, health;
-     public Sprite pSprite;
+    [HideInInspector] public Sprite pSprite;
 
     void Awake()
     {
@@ -26,5 +29,7 @@ public class PlantBehaviour : MonoBehaviour
         water = waterMax;
         pLight = lightMax;
         health = healthMax;
+
+        plantHappinessValue = plant.plantHappinessValue;
     }
 }

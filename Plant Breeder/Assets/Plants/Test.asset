@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Name: Test
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 03dfc3d36a4f5f543955020e7b81c994, type: 3}
-  plantHappinessValue: 10
+  plantHappinessValue: 2
+  plantPrice: 10
   waterMax: 100
   lightMax: 100
   healthMax: 100
