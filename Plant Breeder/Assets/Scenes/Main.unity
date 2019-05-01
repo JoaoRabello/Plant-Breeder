@@ -1965,6 +1965,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 777614781}
+        m_MethodName: UpdateCurrencyIn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &638137381
@@ -2613,7 +2624,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &766452578
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2825,6 +2836,7 @@ GameObject:
   m_Component:
   - component: {fileID: 777614780}
   - component: {fileID: 777614781}
+  - component: {fileID: 777614782}
   m_Layer: 0
   m_Name: PlantManager
   m_TagString: Untagged
@@ -2859,12 +2871,24 @@ MonoBehaviour:
   plants:
   - {fileID: 382184671}
   SelectedPlant: {fileID: 0}
+  happinessCurrency: 0
   timeToHappiness: 1.5
   happinessText: {fileID: 1806654584}
   waterText: {fileID: 30895189}
   lightText: {fileID: 1828692455}
   healthText: {fileID: 679833939}
   image: {fileID: 1394847220}
+--- !u!114 &777614782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 777614779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d06b393654c6d1458d3fe270b98aa66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &846931355
 GameObject:
   m_ObjectHideFlags: 0

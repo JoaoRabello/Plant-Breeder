@@ -5,14 +5,17 @@ using UnityEngine.UI;
 
 public class PlantManager : MonoBehaviour {
 
+    public static PlantManager instance;
+
     [SerializeField] private List<PlantBehaviour> plants = new List<PlantBehaviour>();
 
     [HideInInspector] public PlantBehaviour SelectedPlant;
 
-    private int happinessCurrency;
+    public int happinessCurrency;
     private int totalCurrencyIn;
     private float timer = 0f;
-    [SerializeField] private float timeToHappiness = 3f;
+    [SerializeField]
+    private float timeToHappiness = 3f;
 
     [SerializeField] private Text happinessText;
 
@@ -22,6 +25,12 @@ public class PlantManager : MonoBehaviour {
     [SerializeField] private Image image;
 
     void Awake () {
+
+        if(instance == null)
+        {
+            instance = this;
+        }
+
         SelectedPlant = plants[0];
 	}
 
@@ -53,9 +62,9 @@ public class PlantManager : MonoBehaviour {
     private void UpdateVisuals(PlantBehaviour p)
     {
         image.sprite = p.pSprite;
-        waterText.text = "Water: " + p.water.ToString("F0");
-        lightText.text = "Light: " + p.pLight.ToString("F0");
-        healthText.text = "Health: " + p.health.ToString("F0");
+        waterText.text = "Água: " + p.water.ToString("F0");
+        lightText.text = "Luz: " + p.pLight.ToString("F0");
+        healthText.text = "Saúde: " + p.health.ToString("F0");
     }
 
     public void UpdateCurrencyIn()
@@ -68,7 +77,6 @@ public class PlantManager : MonoBehaviour {
                 totalCurrencyIn += p.plantHappinessValue;
             }
         }
-        Debug.Log("Total de felicidade: " + totalCurrencyIn);
     }
 
     private void EarnHappiness()
@@ -82,6 +90,7 @@ public class PlantManager : MonoBehaviour {
         {
             timer = 0f;
             happinessCurrency += totalCurrencyIn;
+            SaveSystem.instance.Save();
         }
     }
 
