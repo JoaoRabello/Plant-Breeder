@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98e8538bb787c8c4e85abb157dde7c0a, type: 3}
+  m_Name: Test
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: 03dfc3d36a4f5f543955020e7b81c994, type: 3}
+  plantHappinessValue: 10
+  waterMax: 100
+  lightMax: 100
+  healthMax: 100

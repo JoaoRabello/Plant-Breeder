@@ -2,35 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Plant : MonoBehaviour {
+[CreateAssetMenu(fileName = "New Plant", menuName = "Plant")]
+public class Plant : ScriptableObject {
 
-    public float plantValue;
-    public float timeToEarnHappiness;
-    private float timer;
+    [Tooltip("Sprite da planta")]
+    public Sprite sprite;
 
-    public float happiness;
-    public float water;
-    public float sun;
-    public float health;
+    [Tooltip("Valor de felicidade individual que a planta gera")]
+    public float plantHappinessValue;
+
+    [Tooltip("Valor máximo de água da planta")]
+    public float waterMax;
+    [Tooltip("Valor máximo de luz da planta")]
+    public float lightMax;
+    [Tooltip("Valor máximo de saúde da planta")]
+    public float healthMax;
 	
-	void Start () {
-        happiness = 0f;
-        water = 0f;
-        sun = 0f;
-        health = 0f;
-	}
-	
-	void Update () {
-		
-        if(timer <= timeToEarnHappiness)
-        {
-            timer += Time.deltaTime;
-        }
-        else
-        {
-            timer = 0f;
-            happiness += plantValue;
-            Debug.Log("Felicidade: " + happiness.ToString("F0"));
-        }
-	}
 }
