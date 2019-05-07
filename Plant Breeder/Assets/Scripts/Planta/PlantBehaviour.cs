@@ -5,31 +5,15 @@ using UnityEngine.UI;
 
 public class PlantBehaviour : MonoBehaviour
 {
-    public PlantManager plantManager;
-    public Plant plant;
+    public PlantDisplay plant;
 
-    [HideInInspector] public int plantHappinessValue;
-
-    public bool owned = false;
-
-    [HideInInspector] public float waterMax, water;
-    [HideInInspector] public float lightMax, pLight;
-    [HideInInspector] public float healthMax, health;
-    [HideInInspector] public Sprite pSprite;
-
-    void Awake()
+    private void OnCollisionEnter2D(Collision2D c)
     {
-        GetComponent<Image>().sprite = plant.sprite;
-        pSprite = plant.sprite;
-
-        waterMax = plant.waterMax;
-        lightMax = plant.lightMax;
-        healthMax = plant.healthMax;
-
-        water = waterMax;
-        pLight = lightMax;
-        health = healthMax;
-
-        plantHappinessValue = plant.plantHappinessValue;
+        if (c.gameObject.CompareTag("Water"))
+        {
+            if(plant.water < plant.waterMax)
+                plant.water++;
+        }
     }
+
 }

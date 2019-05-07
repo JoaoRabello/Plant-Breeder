@@ -7,9 +7,9 @@ public class PlantManager : MonoBehaviour {
 
     public static PlantManager instance;
 
-    [SerializeField] private List<PlantBehaviour> plants = new List<PlantBehaviour>();
+    [SerializeField] private List<PlantDisplay> plants = new List<PlantDisplay>();
 
-    [HideInInspector] public PlantBehaviour SelectedPlant;
+    [HideInInspector] public PlantDisplay SelectedPlant;
 
     public int happinessCurrency;
     private int totalCurrencyIn;
@@ -36,7 +36,7 @@ public class PlantManager : MonoBehaviour {
 
     void Update () {
 
-        foreach (PlantBehaviour p in plants)
+        foreach (PlantDisplay p in plants)
         {
             if(p != null)
             {
@@ -47,19 +47,19 @@ public class PlantManager : MonoBehaviour {
         EarnHappiness();
     }
 
-    private void ReduceStatus(PlantBehaviour p)             //Redução do status de água das plantas pelo tempo
+    private void ReduceStatus(PlantDisplay p)             //Redução do status de água das plantas pelo tempo
     {
         p.water -= Time.deltaTime * 0.5f;
         p.pLight -= Time.deltaTime * 0.5f;
         p.health -= Time.deltaTime * 0.5f;
     }
 
-    public void SelectPlant(PlantBehaviour p)
+    public void SelectPlant(PlantDisplay p)
     {
         SelectedPlant = p;
     }
 
-    private void UpdateVisuals(PlantBehaviour p)
+    private void UpdateVisuals(PlantDisplay p)
     {
         image.sprite = p.pSprite;
         waterText.text = "Água: " + p.water.ToString("F0");
@@ -70,7 +70,7 @@ public class PlantManager : MonoBehaviour {
     public void UpdateCurrencyIn()
     {
         totalCurrencyIn = 0;
-        foreach (PlantBehaviour p in plants)
+        foreach (PlantDisplay p in plants)
         {
             if (p != null)
             {
@@ -94,7 +94,7 @@ public class PlantManager : MonoBehaviour {
         }
     }
 
-    public void BuyPlant(PlantBehaviour p)
+    public void BuyPlant(PlantDisplay p)
     {
         if (p.plant.plantPrice <= happinessCurrency && p.owned == false)
         {

@@ -22,9 +22,10 @@ GameObject:
   - component: {fileID: 212947329119004798}
   - component: {fileID: 50806339970462156}
   - component: {fileID: 114387627859226946}
+  - component: {fileID: 60839948546049810}
   m_Layer: 0
   m_Name: Gota
-  m_TagString: Untagged
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61,7 +62,35 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
+--- !u!60 &60839948546049810
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1119527545184308}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.20833333, y: 0.29166666}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.10416667, y: 0.14583334}
+      - {x: -0.10416667, y: -0.14583334}
+      - {x: 0.10416667, y: -0.14583334}
+      - {x: 0.10416667, y: 0.14583334}
 --- !u!114 &114387627859226946
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -108,7 +137,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b3a741bae5e270648ab32938bb30ae41, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 687c2c60e16746d4ca76e25bc1058aea, type: 3}
   m_Color: {r: 0.037246335, g: 0.8423536, b: 0.8773585, a: 0.5529412}
   m_FlipX: 0
   m_FlipY: 0
