@@ -20,6 +20,7 @@ public class PlantManager : MonoBehaviour {
     [SerializeField] private Text happinessText;
 
     [SerializeField] private Text waterText;
+    [SerializeField] private Slider waterSld;
     [SerializeField] private Text lightText;
     [SerializeField] private Text healthText;
     [SerializeField] private Image image;
@@ -63,6 +64,7 @@ public class PlantManager : MonoBehaviour {
     {
         image.sprite = p.pSprite;
         waterText.text = "Água: " + p.water.ToString("F0");
+        waterSld.value = p.water;
         lightText.text = "Luz: " + p.pLight.ToString("F0");
         healthText.text = "Saúde: " + p.health.ToString("F0");
     }
